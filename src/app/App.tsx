@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { SlideNavigation } from './components/SlideNavigation';
-import { TableOfContents } from './components/TableOfContents';
-import { ErrorBoundary } from './components/ErrorBoundary';
+import { SlideNavigation } from "../components/SlideNavigation";
+import { TableOfContents } from "../components/TableOfContents";
+import { ErrorBoundary } from "../components/ErrorBoundary";
 
 // Import all slides
 import { Slide01Welcome } from './components/slides/Slide01Welcome';
