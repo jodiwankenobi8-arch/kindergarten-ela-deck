@@ -1,0 +1,257 @@
+========================================
+COPY EVERYTHING BELOW THIS LINE ⬇️
+========================================
+
+I've built a professional kindergarten ELA interactive lesson slide deck with React + TypeScript. It's a 102-slide presentation with timer system, roadmap navigation, and Science of Reading alignment. I'd love your evaluation of the code architecture and educational design.
+
+## PROJECT OVERVIEW
+
+**Type:** Professional kindergarten ELA interactive lesson slide deck  
+**Framework:** React 18.3.1 + TypeScript + Vite  
+**Styling:** Tailwind CSS v4 + Custom Beach Theme  
+**Purpose:** Curriculum-grade, administrator-ready presentation for live classroom use
+
+**Design:** Beach theme (soft sand #F4E9DA, seafoam #CFE8E5, ocean blue #6FA8DC, coral accent #F4A7A1, deep navy text #2F3E46) with Poppins and Nunito fonts
+
+**Content:** Full 60-minute lesson with UFLI phonics, embedded YouTube videos, sight word practice, Savvas story reading
+
+**Features:** 
+- 5 timer sessions (2, 3, 5, 5, 15 minutes) with audio alerts
+- Keyboard navigation (arrows, page up/down, spacebar)
+- Clickable roadmap circles to jump between sections
+- Presentation clicker support
+- 102 slides total organized into: Welcome (1-3), Songs (4-7), UFLI (8-66), Sight Words (67-74), Story Reading (75-90), Reflection (91-102)
+
+---
+
+## KEY TECHNICAL DETAILS
+
+### App.tsx Structure (400+ lines)
+- **Centralized timer system:** 5 sessions across slides 10-66
+- **Auto-start timers:** When entering timed slides
+- **Audio alerts:** Beep at 10 seconds, buzz at time's up (base64-encoded audio)
+- **Keyboard event listeners:** Arrow keys, Page Up/Down, Spacebar for navigation
+- **Custom event system:** `navigateToSlide` for roadmap navigation
+- **State management:** useState for currentSlide, timerSeconds, timerRunning, timerSession
+
+### Timer Sessions (lines 211-258 in App.tsx)
+```typescript
+// Session 1: Slides 10-11 (2 min) - Phonemic Awareness
+if (currentSlide === 10) {
+  setTimerSeconds(2 * 60);
+  setTimerSession(1);
+  setTimerRunning(true);
+}
+
+// Session 2: Slides 12-29 (3 min) - Visual Drill
+else if (currentSlide === 12) {
+  setTimerSeconds(3 * 60);
+  setTimerSession(2);
+  setTimerRunning(true);
+}
+
+// Session 3: Slides 30-31 (5 min) - Auditory Drill
+// Session 4: Slides 32-33 (5 min) - Blending
+// Session 5: Slides 34+ (15 min) - New Concept
+```
+
+### RoadmapWrappers.tsx
+5 wrapper components for roadmap slides at indices [3, 7, 67, 75, 90]
+
+```typescript
+export function RoadmapInitial(props: any) {
+  return <Slide03Roadmap onGoToSlide={props.onGoToSlide} currentStep={0} />;
+}
+
+export function RoadmapAfterSongs(props: any) {
+  return <Slide03Roadmap onGoToSlide={props.onGoToSlide} currentStep={1} />;
+}
+
+export function RoadmapAfterUFLI(props: any) {
+  return <Slide03Roadmap onGoToSlide={props.onGoToSlide} currentStep={2} />;
+}
+
+export function RoadmapAfterSightWords(props: any) {
+  return <Slide03Roadmap onGoToSlide={props.onGoToSlide} currentStep={3} />;
+}
+
+export function RoadmapAfterSavvas(props: any) {
+  return <Slide03Roadmap onGoToSlide={props.onGoToSlide} currentStep={4} />;
+}
+```
+
+**Note:** Uses `props: any` to pass both `onGoToSlide` and `timerProps` without TypeScript conflicts
+
+### UFLISlideLayout.tsx
+Reusable layout wrapper for all UFLI slides:
+
+```typescript
+interface UFLISlideLayoutProps {
+  children: ReactNode;
+  timerProps?: {
+    minutes: number;
+    seconds: number;
+    running: boolean;
+    onToggle: () => void;
+  } | null;
+}
+
+export function UFLISlideLayout({ children, timerProps }: UFLISlideLayoutProps) {
+  return (
+    <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden"
+      style={{ background: '#F4E9DA' }}
+    >
+      {/* Timer in top-right corner */}
+      {timerProps && (
+        <div className="absolute top-6 right-6 z-10">
+          {/* Circular progress indicator with click to pause/resume */}
+          <div onClick={timerProps.onToggle} style={{
+            background: `conic-gradient(var(--ocean-blue) ${progress}%, var(--seafoam) ${progress}%)`,
+            borderRadius: '50%',
+            animation: timerProps.running ? 'pulse 2s infinite' : 'none'
+          }}>
+            {/* Clock icon + MM:SS display */}
+          </div>
+        </div>
+      )}
+      
+      {/* Content - 80% of screen */}
+      <div className="flex items-center justify-center" style={{ height: '80%', width: '80%' }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+## PROJECT STRUCTURE
+
+```
+/src
+  /app
+    App.tsx (main application - 400+ lines)
+    
+    /components
+      SlideNavigation.tsx       # Arrow buttons for prev/next
+      TableOfContents.tsx       # Sidebar with all slide titles
+      TeacherNotes.tsx          # Teacher notes panel
+      Timer.tsx                 # Individual timer component
+      UFLISlideLayout.tsx       # Layout wrapper for UFLI slides
+      SlideLayout.tsx           # General slide layout
+      
+      /slides (100+ files)
+        RoadmapWrappers.tsx     # 5 roadmap wrappers
+        Slide01Welcome.tsx
+        Slide02ICanStatements.tsx
+        Slide03Roadmap.tsx      # Interactive roadmap with clickable circles
+        VideoSlides.tsx         # YouTube video embeds
+        FormativeCheckSlides.tsx # 6 word/answer pairs
+        Slide07AUFLITitle.tsx
+        [90+ UFLI/sight word/story slides...]
+        
+      /ui (40+ shadcn/radix components)
+        button.tsx
+        card.tsx
+        dialog.tsx
+        [etc...]
+        
+  /styles
+    theme.css                   # Beach theme CSS variables
+    tailwind.css                # Tailwind v4 config
+    fonts.css                   # Google Fonts (Poppins, Nunito)
+    
+  /imports
+    [Figma SVG assets]
+```
+
+---
+
+## DEPENDENCIES
+
+```json
+{
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@radix-ui/react-*": "[20+ component primitives]",
+    "@mui/material": "7.3.5",
+    "@mui/icons-material": "7.3.5",
+    "lucide-react": "0.487.0",
+    "motion": "12.23.24",
+    "react-dnd": "16.0.1",
+    "recharts": "2.15.2",
+    "sonner": "2.0.3",
+    "tailwindcss": "4.1.12"
+  }
+}
+```
+
+---
+
+## RECENT BUG FIX
+
+**Issue:** Roadmap circles weren't clickable - onGoToSlide wasn't being passed through wrappers
+
+**Root Cause:**
+- App.tsx passes both `onGoToSlide` and `timerProps` to all slides
+- RoadmapWrappers had strict TypeScript interfaces
+- Type mismatch prevented prop passing
+
+**Solution:**
+- Changed wrapper props from strict interfaces to `props: any`
+- Explicitly passed `onGoToSlide={props.onGoToSlide}` in each wrapper
+- All 5 roadmap slides now have working clickable navigation
+
+**Files Modified:** `/src/app/components/slides/RoadmapWrappers.tsx`
+
+---
+
+## CLASSROOM USE CASES
+
+1. **Live Presentation:** Teacher projects on smartboard/screen
+2. **Timer Management:** Auto-timed activities keep lesson pacing on track
+3. **Interactive Navigation:** Click roadmap circles to jump to any section
+4. **Visual Learning:** Calming beach theme creates focused environment
+5. **Embedded Media:** YouTube videos for alphabet/phonics songs
+6. **Assessment:** Built-in formative checks with answer reveals
+7. **Science of Reading:** UFLI-aligned explicit phonics instruction
+
+---
+
+## QUESTIONS FOR EVALUATION
+
+1. **Code Architecture** - Is the centralized timer system in App.tsx the best approach? Should it be a Context provider instead?
+
+2. **Type Safety** - Using `props: any` in RoadmapWrappers feels wrong. Is there a better TypeScript solution that allows passing multiple props dynamically?
+
+3. **Performance** - With 102 slides, timer animations, and embedded videos, are there performance concerns? Should I lazy load slides?
+
+4. **Navigation System** - Is the custom `navigateToSlide` event system overkill? Would direct prop drilling be simpler?
+
+5. **Educational Design** - Does this meet professional curriculum standards? What would make it more administrator-ready?
+
+6. **Accessibility** - What improvements are needed for screen readers, keyboard-only users, and ARIA labels?
+
+7. **Production Readiness** - What's missing before I can share this with school districts? Error boundaries? Testing? Analytics?
+
+8. **React/TypeScript Best Practices** - Am I following best practices? Any anti-patterns to fix?
+
+9. **State Management** - Should timer state be in Context? Should I use Zustand or Redux?
+
+10. **Code Organization** - With 100+ slide files, is the current structure maintainable? Should I group slides differently?
+
+---
+
+Please provide specific recommendations with code examples where helpful. I'm especially interested in:
+- How to properly type the RoadmapWrappers while still passing dynamic props
+- Whether the timer system architecture is sound or needs refactoring
+- Accessibility improvements for classroom use
+- Performance optimizations for 102 slides
+
+Thank you!
+
+========================================
+COPY EVERYTHING ABOVE THIS LINE ⬆️
+========================================

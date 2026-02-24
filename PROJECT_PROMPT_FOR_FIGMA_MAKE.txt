@@ -1,0 +1,1062 @@
+================================================================================
+KINDERGARTEN ELA INTERACTIVE LESSON DECK - COMPLETE PROJECT SPECIFICATION
+================================================================================
+
+BUILD ME: A fully functional, professional-grade kindergarten ELA interactive 
+slide deck (95 slides) with embedded YouTube videos, complete UFLI Day 1 
+content, timer system, and presentation clicker support aligned with Science 
+of Reading standards.
+
+================================================================================
+CORE REQUIREMENTS
+================================================================================
+
+PROJECT TYPE: React/TypeScript web application
+TOTAL SLIDES: 95 slides
+LESSON DURATION: ~65 minutes
+THEME: Calming beach theme (ocean blues, soft sand, seafoam, coral accents)
+TARGET AUDIENCE: Kindergarten students (including ESOL)
+CURRICULUM: UFLI Foundations Lesson 54 Day 1 + Savvas myView Reading
+
+================================================================================
+DESIGN SYSTEM - BEACH THEME
+================================================================================
+
+COLOR PALETTE:
+--soft-sand: #F5E6D3       /* Page backgrounds */
+--sand: #F4E9DA            /* Card/slide backgrounds */
+--ocean-blue: #6FA8DC      /* Primary buttons & accents */
+--deep-navy: #1E3A5F       /* Main text color */
+--seafoam: #CFE8E5         /* Secondary accents */
+--coral: #F4A7A1           /* Highlights & warm accents */
+--coral-accent: #FF7F7F    /* Interactive states */
+--sunset: #FDBF76          /* Additional warm accent */
+
+TYPOGRAPHY:
+- Headers: "Quicksand" (friendly, rounded, kindergarten-appropriate)
+- Body: "Open Sans" (clean, highly readable)
+- Welcome titles: 72px
+- Slide titles: 60px
+- Body text: 24px-48px
+- Large display words: 140px (for formative checks)
+
+VISUAL ELEMENTS:
+- Animated SVG waves (2 layers, oscillating at 3s and 4s intervals)
+- Rounded corners on all cards/buttons (border-radius: 16px-24px)
+- Soft shadows for depth
+- Large, friendly icons from lucide-react library
+- High contrast for classroom projector visibility
+
+================================================================================
+SLIDE DECK STRUCTURE (95 SLIDES)
+================================================================================
+
+**SECTION 1: WELCOME & NAVIGATION (Slides 1-3)**
+├─ Slide 1: Welcome screen with reading bird mascot + animated waves
+├─ Slide 2: "I Can Statements" with 3 interactive checkboxes
+│   • Read long A words with silent E
+│   • Read sight words fast
+│   • Tell why author wrote a story
+└─ Slide 3: Learning Journey roadmap with 5 clickable sections
+    • Songs (8 min) → Music icon
+    • UFLI Phonics (30 min) → Book icon
+    • Sight Words (8 min) → Eye icon
+    • Savvas Story (15 min) → BookText icon
+    • Celebration (2 min) → CheckCircle icon
+
+**SECTION 2: SONGS (Slides 4-7)**
+├─ Slide 4: Alphabet Song (YouTube embed - Jack Hartmann, autoplay)
+├─ Slide 5: Short A Song (YouTube embed with 🍎)
+├─ Slide 6: Long A Song (YouTube embed with 🦍)
+└─ Slide 7: Return to roadmap (Songs section highlighted)
+
+**SECTION 3: UFLI PHONICS LESSON 54 DAY 1 (Slides 8-67)**
+
+3A. INTRODUCTION (Slides 8-11)
+├─ Slide 8: UFLI Lesson 54 Day 1 title screen
+├─ Slide 9: Daily schedule overview
+├─ Slide 10: Phonemic Awareness activity title
+└─ Slide 11: Schedule with "Phonemic Awareness" checked off
+
+3B. VISUAL DRILL WITH TIMER (Slides 12-29) - 3 MINUTE TIMER
+├─ Slide 12: "Visual Drill" title slide
+├─ Slides 13-28: 16 randomized letter cards (S,A,I,O,E,U,N,M,T,P,D,X,C,G,L,V)
+│   • Full-screen high-contrast letter displays
+│   • Circular timer with click-to-pause in top-right
+│   • Auto-start timer at slide 12
+└─ Slide 29: Schedule with "Visual Drill" checked off
+
+3C. AUDITORY DRILL WITH TIMER (Slides 30-31) - 5 MINUTE TIMER
+├─ Slide 30: "Auditory Drill" title slide with timer
+└─ Slide 31: Schedule with "Auditory Drill" checked off
+
+3D. BLENDING DRILL WITH TIMER (Slides 32-34) - 5 MINUTE TIMER
+├─ Slide 32: "Blending Drill" title slide
+├─ Slide 33: Blending board display
+└─ Slide 34: Schedule with "Blending Drill" checked off
+
+3E. NEW CONCEPT: LONG A WITH SILENT E (Slides 35-54) - 15 MINUTE TIMER
+├─ Slide 35: "New Concept" title
+├─ Slide 36: Short A with apple picture (🍎)
+├─ Slide 37: Long A with acorn picture (🌰)
+├─ Slide 38: A_E pattern introduction card
+├─ Slides 39-47: Word pair demonstrations
+│   • made, tape (Pattern Words list)
+│   • tap → tape (transformation)
+│   • cap → cape (transformation)
+│   • mad → made (transformation)
+├─ Slide 48: Sound/Articulatory card
+├─ Slide 49: "Watch Me Read" (teacher modeling)
+├─ Slides 50-51: "Read Together" (guided practice - 2 slides)
+├─ Slide 52: "Watch Me Spell" (teacher modeling)
+├─ Slide 53: "Spell Together" (guided practice)
+└─ Slide 54: Final schedule with all items checked
+
+3F. FORMATIVE ASSESSMENT (Slides 55-66) - 12 SLIDES
+Interactive thumbs up/down assessment for long vs short A:
+├─ Slides 55-56: Word "cake" → Question + Answer (long A, underline E)
+├─ Slides 57-58: Word "tape" → Question + Answer (long A, underline E)
+├─ Slides 59-60: Word "made" → Question + Answer (long A, underline E)
+├─ Slides 61-62: Word "cape" → Question + Answer (long A, underline E)
+├─ Slides 63-64: Word "bake" → Question + Answer (long A, underline E)
+└─ Slides 65-66: Word "game" → Question + Answer (long A, underline E)
+
+Format:
+• Question slide: Large word (140px) + 👍 "Long A" + 👎 "Short A"
+• Answer slide: Highlights correct answer, underlines silent E if long A
+
+**SECTION 4: SIGHT WORDS (Slides 67-77)**
+├─ Slide 67: Return to roadmap (Sight Words highlighted)
+├─ Slides 68-69: "away" - Video (HeidiSongs) + Spelling practice
+├─ Slides 70-71: "little" - Video (HeidiSongs) + Spelling practice
+├─ Slides 72-73: "get" - Video (HeidiSongs) + Spelling practice
+├─ Slide 74: "Show What You Know" transition slide
+├─ Slide 75: Sight word flash card review
+├─ Slide 76: [Additional sight word practice]
+└─ Slide 77: Return to roadmap (Sight Words checked off)
+
+**SECTION 5: SAVVAS READING (Slides 78-92)**
+├─ Slide 78: Author's Purpose introduction
+│   • Two-column layout: "To Entertain" 📚 + "To Inform" 📖
+│   • Visual images for each concept
+├─ Slide 79: Vocabulary pre-teaching slide (image with key words)
+├─ Slide 80: Book cover display
+├─ Slides 81-88: Story pages 154-161 (8 sequential pages)
+│   • Full-screen high-quality page displays
+│   • Page 154, 155, 156, 157, 158, 159, 160, 161
+├─ Slide 89: Author's Purpose review (same two-column layout)
+├─ Slide 90: "Turn and Talk" discussion prompt
+│   • "Why did the author write this story?"
+│   • "Was it to entertain us or inform us?"
+├─ Slide 91: Class discussion prompts
+│   • What was your favorite part?
+│   • What surprised you?
+│   • What did you learn?
+└─ Slide 92: Return to roadmap (Savvas checked off)
+
+**SECTION 6: CELEBRATION & REFLECTION (Slides 93-95)**
+├─ Slide 93: Reflection checkoff with interactive checkboxes
+│   • Review of "I Can Statements" from Slide 2
+│   • Click to check off completed learning objectives
+├─ Slide 94: [Additional reflection/discussion]
+└─ Slide 95: 🎉 CELEBRATION 🎉
+    • "Amazing Work, Readers!"
+    • "You did it!"
+    • Large emojis and positive reinforcement
+    • Animated waves at bottom
+
+================================================================================
+NAVIGATION SYSTEM
+================================================================================
+
+**BOTTOM NAVIGATION BAR (Always visible)**
+Component: SlideNavigation
+Features:
+- Previous/Next buttons (ChevronLeft/ChevronRight icons)
+- Slide counter: "X / 95"
+- Current slide title display
+- Ocean blue background
+- Disabled states for first/last slides
+- Responsive to keyboard shortcuts
+
+**TABLE OF CONTENTS (Side Panel)**
+Component: TableOfContents
+Toggle: Hamburger menu button (☰) in top-left
+Features:
+- Scrollable list of all 95 slide titles
+- Current slide highlighted in ocean blue
+- Non-current slides in seafoam background
+- Click any slide to jump directly to it
+- Auto-closes after selection
+- Auto-scrolls to current slide when opened
+- Home button (🏠) to jump to navigation slide
+
+**DOWNLOAD OPTIONS (Inside TOC at bottom)**
+Collapsible "Download Options" section with 2 buttons:
+
+1. **Project Documentation** (Seafoam button)
+   - Downloads comprehensive README.md file
+   - Includes: Setup instructions, features, keyboard shortcuts, 
+     curriculum alignment, all component documentation
+
+2. **All Slides as Images** (Coral button)
+   - Auto-captures all 95 slides as PNG images (1920x1080)
+   - Shows live progress: "Capturing... X%"
+   - Packages into ZIP file with organized naming
+   - Includes README.txt with slide organization
+   - Returns to starting slide after completion
+
+**KEYBOARD SHORTCUTS (Presentation Clicker Compatible)**
+Navigation:
+- Right Arrow / Page Down / Space / 'N' → Next slide
+- Left Arrow / Page Up / 'P' → Previous slide
+- Home → Jump to first slide
+- End → Jump to last slide
+
+All keys prevent default scrolling behavior for seamless presentation.
+Fully compatible with: Logitech Spotlight, Kensington, generic clickers.
+
+================================================================================
+TIMER SYSTEM
+================================================================================
+
+**TIMER COMPONENT**
+Visual Design:
+- Circular progress ring with conic gradient
+- Ocean blue (remaining time) → Seafoam (elapsed time)
+- Clock icon in center
+- MM:SS format display
+- Pulse animation when running
+
+Interactions:
+- Click anywhere on timer to pause/resume
+- Auto-starts when entering timed slide
+- Maintains state within session
+
+**TIMER SESSIONS (5 Sessions with Auto-Start)**
+
+Session 1: 2 MINUTES (Slides 10-11)
+- Phonemic Awareness introduction
+- Timer appears at slide 10, auto-starts
+
+Session 2: 3 MINUTES (Slides 12-29)
+- Visual Drill with 16 letter cards
+- Timer appears at slide 12, auto-starts
+- Persists across all letter slides
+
+Session 3: 5 MINUTES (Slides 30-31)
+- Auditory Drill
+- Timer appears at slide 30, auto-starts
+
+Session 4: 5 MINUTES (Slides 32-33)
+- Blending Drill
+- Timer appears at slide 32, auto-starts
+
+Session 5: 15 MINUTES (Slides 34+)
+- New Concept teaching & practice
+- Timer appears at slide 34, auto-starts
+- Longest session for in-depth instruction
+
+**TIMER AUDIO ALERTS**
+- 10 seconds remaining: Beep sound every second (soft, non-intrusive)
+- Time's up: Buzz sound (louder, attention-getting)
+- Uses base64-encoded WAV audio (no external files needed)
+- Volume: 50% for beeps, 70% for buzz
+- Fails gracefully if audio blocked by browser
+
+================================================================================
+INTERACTIVE ELEMENTS
+================================================================================
+
+**1. CLICKABLE CHECKBOXES (Slides 2, 93)**
+Behavior:
+- Click to toggle checked/unchecked state
+- Checked: Ocean blue fill with white checkmark
+- Unchecked: White fill with ocean blue border
+- Smooth 300ms transition animation
+- Hover: Scale 1.05 transform
+
+**2. ROADMAP NAVIGATION (Slides 3, 7, 67, 77, 92)**
+Behavior:
+- 5 large circular section buttons with icons
+- Click any section to jump to that lesson
+- Current section: Scaled 1.3x, coral border, glowing shadow
+- Non-current: Scale 1.0, gray, reduced opacity
+- Hover: Scale 1.1 transform
+- Time estimates displayed below each section
+
+**3. YOUTUBE VIDEO EMBEDS (Slides 4-6, 68-73)**
+Configuration:
+- Width: 800px, Height: 450px
+- Autoplay enabled (?autoplay=1)
+- Fullscreen allowed
+- Border: none
+- Container: Rounded 24px with seafoam background
+- Soft shadow for depth
+
+Video URLs:
+- Alphabet Song: https://www.youtube.com/embed/BELlZKpi1Zs?autoplay=1
+- Short A Song: https://www.youtube.com/embed/ljN_Fv-UaZw?autoplay=1
+- Long A Song: https://www.youtube.com/embed/1CfOWQZ2UYs?autoplay=1
+- Sight word "away": https://www.youtube.com/embed/rKFSPUJtH7Q?autoplay=1
+- Sight word "little": https://www.youtube.com/embed/ZPO3RdnX86c?autoplay=1
+- Sight word "get": https://www.youtube.com/embed/EWnlJFRwNJE?autoplay=1
+
+**4. FORMATIVE ASSESSMENT (Slides 55-66)**
+Question Slides:
+- Large word display (140px, deep navy, bold)
+- Sand-colored card background
+- 👍 emoji + "Long A" (ocean blue)
+- 👎 emoji + "Short A" (coral)
+- Spaced layout for clear visibility
+
+Answer Slides:
+- Correct answer highlighted (ocean blue background, white text)
+- Incorrect answer grayed out (30% opacity)
+- Silent E underlined with 8px decoration
+- Same emoji/label layout
+- Smooth 500ms transition
+
+================================================================================
+COMPONENT ARCHITECTURE
+================================================================================
+
+**MAIN LAYOUT COMPONENTS**
+
+1. SlideLayout.tsx
+Props:
+- type?: 'welcome' | 'instruction' | 'video' | 'interactive' | 'review'
+- title?: string
+- subtitle?: string
+- children: ReactNode
+- timer?: number (deprecated, use timerProps)
+- activeTimer?: boolean (deprecated)
+
+Features:
+- Sand background (#F4E9DA)
+- Animated waves (only on type="welcome")
+- Centered title/subtitle with proper hierarchy
+- Responsive content area (max-width: 1536px)
+
+2. UFLISlideLayout.tsx
+Props:
+- children: ReactNode
+- timerProps?: { minutes, seconds, running, onToggle } | null
+
+Features:
+- Sand background
+- Interactive timer in top-right (when timerProps provided)
+- Content area: 80% width × 80% height
+- Optimized for UFLI instruction slides
+
+**NAVIGATION COMPONENTS**
+
+3. SlideNavigation.tsx
+Props:
+- currentSlide: number
+- totalSlides: number
+- onNext: () => void
+- onPrevious: () => void
+- onGoToSlide: (index: number) => void
+- currentTitle: string
+
+4. TableOfContents.tsx
+Props:
+- slides: Slide[] (array of {component, title})
+- currentSlide: number
+- onGoToSlide: (index: number) => void
+- setCurrentSlide: (slide: number) => void
+
+**UTILITY COMPONENTS**
+
+5. Timer.tsx
+Props:
+- minutes: number
+- seconds: number
+- running: boolean
+- onToggle: () => void
+
+6. ErrorBoundary.tsx
+- Wraps entire slide content
+- Catches React errors gracefully
+- Shows user-friendly error message
+- Prevents full app crash
+
+7. DownloadProject.tsx
+Props:
+- inline?: boolean (for TOC display)
+
+8. DownloadSlidesAsImages.tsx
+Props:
+- totalSlides: number
+- currentSlide: number
+- setCurrentSlide: (slide: number) => void
+- slideTitles: string[]
+- inline?: boolean
+
+================================================================================
+SLIDE COMPONENT PATTERNS
+================================================================================
+
+**PATTERN 1: Basic Content Slide**
+```tsx
+import { SlideLayout } from '../SlideLayout';
+
+export function SlideXXExample() {
+  return (
+    <SlideLayout title="Slide Title" subtitle="Optional subtitle">
+      <div className="flex flex-col items-center gap-8">
+        {/* Your content here */}
+      </div>
+    </SlideLayout>
+  );
+}
+```
+
+**PATTERN 2: UFLI Content Slide with Image**
+```tsx
+import { UFLISlideLayout } from '../UFLISlideLayout';
+import { UFLISlideProps } from './UFLISlideProps';
+import contentImage from 'figma:asset/[hash].png';
+
+export function SlideXXExample({ timerProps }: UFLISlideProps = {}) {
+  return (
+    <UFLISlideLayout timerProps={timerProps}>
+      <img 
+        src={contentImage} 
+        alt="Description"
+        className="max-w-full max-h-full object-contain"
+      />
+    </UFLISlideLayout>
+  );
+}
+```
+
+**PATTERN 3: Video Embed Slide**
+```tsx
+import { SlideLayout } from '../SlideLayout';
+
+export function SlideXXVideo() {
+  return (
+    <SlideLayout type="video" title="Video Title" subtitle="Instructions">
+      <div className="flex flex-col items-center h-full justify-center">
+        <div className="rounded-3xl shadow-2xl p-4" 
+             style={{ backgroundColor: '#CFE8E5' }}>
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1"
+            width="800"
+            height="450"
+            className="rounded-2xl shadow-2xl"
+            allow="autoplay; fullscreen"
+            style={{ border: 'none' }}
+          />
+        </div>
+      </div>
+    </SlideLayout>
+  );
+}
+```
+
+**PATTERN 4: Interactive Checkbox Slide**
+```tsx
+import { useState } from 'react';
+import { SlideLayout } from '../SlideLayout';
+import { Check } from 'lucide-react';
+
+export function SlideXXInteractive() {
+  const [checked, setChecked] = useState<boolean[]>([false, false, false]);
+
+  const toggleCheck = (index: number) => {
+    const newChecked = [...checked];
+    newChecked[index] = !newChecked[index];
+    setChecked(newChecked);
+  };
+
+  const items = ["Item 1", "Item 2", "Item 3"];
+
+  return (
+    <SlideLayout title="Interactive Slide">
+      <div className="flex flex-col gap-6 w-full max-w-5xl">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            onClick={() => toggleCheck(index)}
+            className="flex items-center gap-6 p-8 rounded-2xl cursor-pointer 
+                       transition-all duration-300 hover:shadow-lg"
+            style={{
+              backgroundColor: 'white',
+              border: '3px solid var(--ocean-blue)',
+            }}
+          >
+            <div 
+              className="w-12 h-12 flex-shrink-0 rounded-full flex items-center 
+                         justify-center transition-all duration-300"
+              style={{ 
+                border: '3px solid var(--ocean-blue)',
+                backgroundColor: checked[index] ? 'var(--ocean-blue)' : 'transparent'
+              }}
+            >
+              {checked[index] && (
+                <Check className="w-8 h-8" style={{ color: 'white', strokeWidth: 4 }} />
+              )}
+            </div>
+            <p className="text-4xl" style={{ color: 'var(--deep-navy)' }}>
+              {item}
+            </p>
+          </div>
+        ))}
+      </div>
+    </SlideLayout>
+  );
+}
+```
+
+================================================================================
+IMAGE ASSET SYSTEM
+================================================================================
+
+**FIGMA ASSET IMPORT (CRITICAL)**
+Correct syntax:
+```tsx
+import imageName from 'figma:asset/[hash].png';
+```
+
+IMPORTANT:
+- ⚠️ figma:asset is a VIRTUAL MODULE SCHEME, NOT a file path
+- ✅ Correct: import img from "figma:asset/abc123.png"
+- ❌ Wrong: import img from "../imports/figma:asset/abc123.png"
+- ❌ Wrong: import img from "./figma:asset/abc123.png"
+- No relative paths needed with figma:asset scheme
+
+**PLACEHOLDER: All assets will need to be imported/created**
+
+KEY ASSET CATEGORIES:
+1. Reading Bird Mascot (Welcome slide)
+2. UFLI Title Cards (7 images: title, schedule, activity headers)
+3. Letter Cards (16 images: S,A,I,O,E,U,N,M,T,P,D,X,C,G,L,V)
+4. Long A Pattern Images (15 images: apple, acorn, word cards, sound cards)
+5. Schedule Progress Images (6 images: checkpoint screens)
+6. Savvas Reading Images (12 images: vocabulary, author's purpose, story pages)
+
+TOTAL IMAGES NEEDED: ~60 images
+
+For initial build without images:
+- Use placeholder colored divs with text labels
+- Use emoji substitutes where appropriate
+- Ensure proper alt text for all images
+- Maintain proper sizing: className="max-w-full max-h-full object-contain"
+
+================================================================================
+STATE MANAGEMENT (App.tsx)
+================================================================================
+
+**MAIN STATE VARIABLES**
+```typescript
+const [currentSlide, setCurrentSlide] = useState(0);
+const [timerSeconds, setTimerSeconds] = useState(0);
+const [timerRunning, setTimerRunning] = useState(false);
+const [timerSession, setTimerSession] = useState<number | null>(null);
+```
+
+**SLIDES ARRAY STRUCTURE**
+```typescript
+const slides = [
+  { component: Slide01Welcome, title: "Welcome" },
+  { component: Slide02ICanStatements, title: "Learning Targets" },
+  { component: Slide02Navigation, title: "Learning Journey" },
+  // ... 92 more slides
+];
+```
+
+**TIMER AUTO-START LOGIC**
+```typescript
+useEffect(() => {
+  // Session 1: 2 min (Slides 10-11)
+  if (currentSlide === 10) {
+    setTimerSeconds(2 * 60);
+    setTimerSession(1);
+    setTimerRunning(true);
+  }
+  // Session 2: 3 min (Slides 12-29)
+  else if (currentSlide === 12) {
+    setTimerSeconds(3 * 60);
+    setTimerSession(2);
+    setTimerRunning(true);
+  }
+  // Session 3: 5 min (Slides 30-31)
+  else if (currentSlide === 30) {
+    setTimerSeconds(5 * 60);
+    setTimerSession(3);
+    setTimerRunning(true);
+  }
+  // Session 4: 5 min (Slides 32-33)
+  else if (currentSlide === 32) {
+    setTimerSeconds(5 * 60);
+    setTimerSession(4);
+    setTimerRunning(true);
+  }
+  // Session 5: 15 min (Slides 34+)
+  else if (currentSlide === 34) {
+    setTimerSeconds(15 * 60);
+    setTimerSession(5);
+    setTimerRunning(true);
+  }
+}, [currentSlide, timerSession]);
+```
+
+**TIMER COUNTDOWN WITH AUDIO**
+```typescript
+useEffect(() => {
+  if (!timerRunning || timerSeconds <= 0) return;
+  
+  const timer = setInterval(() => {
+    setTimerSeconds((prev) => {
+      const newTime = Math.max(0, prev - 1);
+      
+      // Beep at 10 seconds countdown
+      if (newTime > 0 && newTime <= 10) {
+        const beep = new Audio();
+        beep.src = 'data:audio/wav;base64,[BEEP_DATA]';
+        beep.volume = 0.5;
+        beep.play().catch(() => {});
+      }
+      
+      // Buzz when time's up
+      if (prev === 1 && newTime === 0) {
+        const buzz = new Audio();
+        buzz.src = 'data:audio/wav;base64,[BUZZ_DATA]';
+        buzz.volume = 0.7;
+        buzz.play().catch(() => {});
+      }
+      
+      return newTime;
+    });
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, [timerRunning, timerSeconds]);
+```
+
+**KEYBOARD EVENT HANDLER**
+```typescript
+useEffect(() => {
+  const handleKeyDown = (e: KeyboardEvent) => {
+    // Prevent default scrolling
+    if (['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown', 
+         'PageDown', 'PageUp', ' ', 'n', 'N', 'p', 'P'].includes(e.key)) {
+      e.preventDefault();
+    }
+
+    // Next slide
+    if ((e.key === 'ArrowRight' || e.key === 'ArrowDown' || 
+         e.key === 'PageDown' || e.key === ' ' || 
+         e.key === 'n' || e.key === 'N') && 
+        currentSlide < slides.length - 1) {
+      setCurrentSlide(currentSlide + 1);
+    }
+    // Previous slide
+    else if ((e.key === 'ArrowLeft' || e.key === 'ArrowUp' || 
+              e.key === 'PageUp' || e.key === 'p' || e.key === 'P') && 
+             currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
+    // Home
+    else if (e.key === 'Home') {
+      e.preventDefault();
+      setCurrentSlide(0);
+    }
+    // End
+    else if (e.key === 'End') {
+      e.preventDefault();
+      setCurrentSlide(slides.length - 1);
+    }
+  };
+
+  window.addEventListener('keydown', handleKeyDown);
+  return () => window.removeEventListener('keydown', handleKeyDown);
+}, [currentSlide, slides.length]);
+```
+
+**ROADMAP SLIDES DETECTION**
+```typescript
+const roadmapSlides = [2, 3, 7, 68, 77, 92];
+const isRoadmapSlide = roadmapSlides.includes(currentSlide);
+
+// Pass onGoToSlide only to roadmap slides
+<CurrentSlideComponent 
+  onGoToSlide={isRoadmapSlide ? handleGoToSlide : undefined}
+  timerProps={timerProps}
+/>
+```
+
+================================================================================
+REQUIRED PACKAGES
+================================================================================
+
+DEPENDENCIES:
+- react (^18.3.1)
+- react-dom (^18.3.1)
+- react-router (^7.1.1) - NOT react-router-dom
+- lucide-react (latest) - Icon library
+- html2canvas (latest) - For slide export
+- jszip (latest) - For ZIP file creation
+
+DEV DEPENDENCIES:
+- typescript (latest)
+- @types/react (latest)
+- @types/react-dom (latest)
+- tailwindcss (^4.0)
+- vite (latest)
+
+INSTALLATION:
+Use the install_package tool for all packages BEFORE importing them.
+Check package.json first to avoid duplicate installations.
+
+================================================================================
+STYLES CONFIGURATION
+================================================================================
+
+**/src/styles/theme.css**
+```css
+@import "tailwindcss";
+
+:root {
+  --soft-sand: #F5E6D3;
+  --sand: #F4E9DA;
+  --ocean-blue: #6FA8DC;
+  --deep-navy: #1E3A5F;
+  --seafoam: #CFE8E5;
+  --coral: #F4A7A1;
+  --coral-accent: #FF7F7F;
+  --sunset: #FDBF76;
+  
+  --font-header: 'Quicksand', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--soft-sand);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  color: var(--deep-navy);
+}
+```
+
+**/src/styles/fonts.css**
+```css
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+```
+
+================================================================================
+ACCESSIBILITY & UX REQUIREMENTS
+================================================================================
+
+**KINDERGARTEN-APPROPRIATE DESIGN**
+- ✅ All text minimum 24px (readable from back of classroom)
+- ✅ High contrast ratios (WCAG AAA when possible)
+- ✅ Large touch targets (minimum 48px × 48px)
+- ✅ Clear visual hierarchy
+- ✅ Friendly, non-threatening color palette
+- ✅ Positive reinforcement throughout
+
+**ESOL STUDENT SUPPORT**
+- ✅ Visual scaffolding (pictures with every concept)
+- ✅ Consistent slide structures (predictable patterns)
+- ✅ Large, simple language
+- ✅ Gesture cues (thumbs up/down)
+- ✅ Video support with visual contexts
+- ✅ Repetition of key concepts
+
+**KEYBOARD ACCESSIBILITY**
+- ✅ All navigation keyboard-accessible
+- ✅ No keyboard traps
+- ✅ Visual focus indicators
+- ✅ Logical tab order
+
+**SCREEN READER CONSIDERATIONS**
+- ✅ Semantic HTML (nav, main, section, article)
+- ✅ Descriptive alt text for all images
+- ✅ ARIA labels where needed
+- ✅ Proper heading hierarchy
+
+**CLASSROOM PROJECTOR OPTIMIZATION**
+- ✅ High contrast colors
+- ✅ Large fonts
+- ✅ Avoid pure white backgrounds (reduces glare)
+- ✅ Test at 1920×1080 resolution
+- ✅ Soft sand backgrounds reduce eye strain
+
+================================================================================
+CURRICULUM ALIGNMENT
+================================================================================
+
+**SCIENCE OF READING PRINCIPLES**
+✅ Explicit phonics instruction (UFLI structured approach)
+✅ Systematic progression (visual → auditory → blending → application)
+✅ Decodable patterns (A_E silent E pattern)
+✅ Sight word automaticity (HeidiSongs method)
+✅ Formative assessment embedded throughout
+✅ Multiple exposures to concepts
+✅ Multisensory instruction (visual, auditory, kinesthetic)
+
+**UFLI FOUNDATIONS LESSON 54 DAY 1**
+✅ Phonemic Awareness warmup (2 min)
+✅ Visual Drill letter review (3 min, 16 letters)
+✅ Auditory Drill sound practice (5 min)
+✅ Blending Drill word building (5 min)
+✅ New Concept: Long A with silent E (15 min)
+   - Introduce pattern A_E
+   - Model reading CVC vs CVCe words
+   - Guided practice
+   - Independent practice
+✅ Formative assessment (embedded)
+
+**KINDERGARTEN ELA STANDARDS ADDRESSED**
+✅ RF.K.3 - Phonics and word recognition
+✅ RF.K.3.B - Associate long/short vowel sounds with spellings
+✅ RF.K.3.C - Read high-frequency sight words
+✅ RL.K.6 - Define role of author
+✅ RL.K.7 - Describe relationship between illustrations and story
+✅ SL.K.1 - Participate in collaborative conversations
+✅ SL.K.2 - Confirm understanding through questioning
+
+================================================================================
+PERFORMANCE REQUIREMENTS
+================================================================================
+
+**LOAD TIME**
+- Initial load: < 3 seconds
+- Slide transitions: < 100ms
+- Smooth 60fps animations
+
+**RESPONSIVENESS**
+- Optimized for 1920×1080 (classroom projector standard)
+- Graceful scaling for other resolutions
+- Touch-friendly on interactive whiteboards
+
+**BROWSER COMPATIBILITY**
+- Chrome (primary)
+- Firefox
+- Safari
+- Edge
+- Modern browsers with ES6+ support
+
+**ERROR HANDLING**
+- ErrorBoundary wraps all slide content
+- Graceful fallbacks for failed video loads
+- User-friendly error messages
+- Console errors cleaned up (no stray console.logs)
+
+================================================================================
+TESTING CHECKLIST
+================================================================================
+
+**FUNCTIONALITY**
+☐ All 95 slides display correctly
+☐ Navigation works (arrows, keyboard, TOC)
+☐ Timers auto-start at correct slides
+☐ Timer audio alerts play at 10 sec and 0 sec
+☐ Checkboxes toggle correctly
+☐ Roadmap navigation jumps to correct slides
+☐ YouTube videos autoplay
+☐ Download buttons generate correct files
+☐ Slide export captures all 95 slides correctly
+
+**VISUAL**
+☐ Beach theme consistent throughout
+☐ No layout shifts between slides
+☐ Animations smooth and purposeful
+☐ Text readable at projector resolution
+☐ Images scale properly
+☐ No visual glitches
+
+**ACCESSIBILITY**
+☐ Keyboard navigation complete
+☐ Color contrast meets WCAG AA minimum
+☐ Alt text on all images
+☐ Focus indicators visible
+☐ No keyboard traps
+
+**PERFORMANCE**
+☐ Smooth transitions
+☐ No memory leaks
+☐ Timer countdown accurate
+☐ No console errors
+☐ Fast initial load
+
+================================================================================
+ADDITIONAL FEATURES
+================================================================================
+
+**ROADMAP SYSTEM**
+- 5 variations of roadmap slide
+- Each appears after completing a section
+- Highlights current section with:
+  • 1.3x scale
+  • Coral border (4px)
+  • Glowing shadow
+  • Full color icon
+- Completed sections get checkmarks
+- Upcoming sections grayed out
+- Direct navigation by clicking any section
+
+**DOWNLOAD SYSTEM**
+1. Project Documentation
+   - Generates comprehensive README.md
+   - Includes setup instructions, features, keyboard shortcuts
+   - Documents all components and curriculum alignment
+   - Formatted in Markdown
+
+2. All Slides as Images
+   - Uses html2canvas to capture each slide
+   - Shows live progress percentage
+   - Creates high-quality PNG images (1920×1080)
+   - Packages into ZIP with JSZip
+   - Includes README.txt with slide organization
+   - Names files: slide-001-welcome.png, slide-002-learning-targets.png, etc.
+   - Returns to starting slide after completion
+
+**PRESENTATION MODE**
+- Full-screen capable
+- Hides browser chrome
+- Optimized for classroom projector
+- Works with wireless presentation clickers
+- No accidental navigation breaks
+
+================================================================================
+BUILD INSTRUCTIONS
+================================================================================
+
+1. **Initialize Project Structure**
+   - Create React + TypeScript + Vite project
+   - Install all required packages (check package.json first!)
+   - Set up Tailwind CSS v4
+   - Create directory structure
+
+2. **Create Base Components**
+   - SlideLayout.tsx
+   - UFLISlideLayout.tsx
+   - SlideNavigation.tsx
+   - TableOfContents.tsx
+   - Timer.tsx
+   - ErrorBoundary.tsx
+   - DownloadProject.tsx
+   - DownloadSlidesAsImages.tsx
+
+3. **Create All 95 Slide Components**
+   Follow the slide deck structure outlined above.
+   Use appropriate patterns for each type:
+   - Basic content slides
+   - UFLI slides with timer
+   - Video embed slides
+   - Interactive checkbox slides
+   - Roadmap variations
+
+4. **Set Up State Management in App.tsx**
+   - Slide navigation state
+   - Timer state and auto-start logic
+   - Keyboard event handlers
+   - Roadmap detection
+   - Timer audio alerts
+
+5. **Create Styles**
+   - theme.css with CSS variables
+   - fonts.css with Google Fonts imports
+   - Wave animations
+   - Hover effects
+   - Transition animations
+
+6. **Implement Navigation**
+   - Bottom navigation bar
+   - Table of contents panel
+   - Keyboard shortcuts
+   - Roadmap click handlers
+
+7. **Add Timer System**
+   - Circular progress timer component
+   - 5 auto-start sessions
+   - Click-to-pause functionality
+   - Audio alerts (beep, buzz)
+
+8. **Create Download Features**
+   - README generation
+   - Slide capture with html2canvas
+   - ZIP packaging with JSZip
+   - Progress tracking
+
+9. **Polish & Test**
+   - Remove console.logs
+   - Test all keyboard shortcuts
+   - Verify timer accuracy
+   - Check all transitions
+   - Test download features
+   - Verify accessibility
+
+10. **Final QA**
+    - Run through entire lesson sequence
+    - Test on projector resolution (1920×1080)
+    - Verify with presentation clicker
+    - Check all 95 slides render correctly
+
+================================================================================
+NOTES FOR AI IMPLEMENTATION
+================================================================================
+
+**CRITICAL REMINDERS**
+- ⚠️ Total slides: EXACTLY 95 (no more, no less)
+- ⚠️ figma:asset imports: NO relative paths, it's a virtual module
+- ⚠️ Timer sessions: Must auto-start at correct slides
+- ⚠️ Roadmap slides: Pass onGoToSlide prop only to roadmap components
+- ⚠️ Keyboard shortcuts: Prevent default scrolling behavior
+- ⚠️ ErrorBoundary: Wrap ALL slide content
+- ⚠️ TypeScript: Proper typing for all props and state
+
+**RECOMMENDED BUILD ORDER**
+1. Start with layout components (SlideLayout, UFLISlideLayout)
+2. Create navigation system (SlideNavigation, TableOfContents)
+3. Build timer component and logic
+4. Create first few slides to test system
+5. Build remaining slides in batches by section
+6. Add download features
+7. Polish and test
+
+**PLACEHOLDER STRATEGIES**
+If images aren't available:
+- Use colored rectangles with text labels
+- Use emoji as visual substitutes
+- Ensure proper spacing and sizing
+- Maintain alt text structure
+
+**STATE MANAGEMENT TIPS**
+- Keep timer state in App.tsx (needs to persist across slides)
+- Each slide can have internal state (like checkboxes)
+- Pass timerProps down to UFLI slides only
+- Use custom events for roadmap navigation if needed
+
+**PERFORMANCE TIPS**
+- Lazy load slide components if bundle size grows
+- Use React.memo for components that don't need frequent re-renders
+- Optimize images (use appropriate sizes)
+- Minimize re-renders during timer countdown
+
+================================================================================
+END OF PROJECT SPECIFICATION
+================================================================================
+
+This specification contains EVERYTHING needed to build the complete 95-slide
+kindergarten ELA interactive lesson deck from scratch. Follow the structure,
+patterns, and requirements exactly as specified for a professional, 
+administrator-ready, curriculum-aligned result.
+
+Theme: Calming beach 🏖️
+Status: Production Ready ✅
+Science of Reading: Aligned ✅
+ESOL Support: Integrated ✅
+Presentation Clicker: Compatible ✅
+Total Slides: 95 📚
+
+Happy building! 🎉
