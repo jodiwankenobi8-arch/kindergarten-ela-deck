@@ -1,47 +1,49 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-type PresentationStageProps = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
-export function PresentationStage({ children }: PresentationStageProps) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [size, setSize] = useState<{ w: number; h: number }>({ w: 0, h: 0 });
+const SLIDE_WIDTH = 1920;
+const SLIDE_HEIGHT = 1080;
+
+export default function PresentationStage({ children }: Props) {
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+    const updateScale = () => {
+      const scaleX = window.innerWidth / SLIDE_WIDTH;
+      const scaleY = window.innerHeight / SLIDE_HEIGHT;
+      setScale(Math.min(scaleX, scaleY));
+    };
 
-    const ro = new ResizeObserver((entries) => {
-      const rect = entries[0]?.contentRect;
-      if (!rect) return;
-      setSize({ w: rect.width, h: rect.height });
-    });
-
-    ro.observe(el);
-    return () => ro.disconnect();
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
   }, []);
 
-  const scale = useMemo(() => {
-    const w = size.w || window.innerWidth;
-    const h = size.h || window.innerHeight;
-    return Math.min(1, w / 1920, h / 1080);
-  }, [size.w, size.h]);
-
   return (
-    <div ref={containerRef} className="w-screen h-screen overflow-hidden">
-      <div className="w-full h-full flex items-center justify-center overflow-hidden">
-        <div
-          style={{
-            width: 1920,
-            height: 1080,
-            transform: `scale(${scale})`,
-            transformOrigin: "center center",
-            willChange: "transform",
-          }}
-        >
-          {children}
-        </div>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        background: "#111",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          width: SLIDE_WIDTH,
+          height: SLIDE_HEIGHT,
+          transform: `scale(${scale})`,
+          transformOrigin: "center center",
+          position: "relative",
+        }}
+      >
+        {children}
       </div>
     </div>
   );
