@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import auditoryDrillImg from 'figma:asset/7cc6a55de5d1f9aeeaa656f076f624428557803d.png';
+import auditoryDrillImg from '../../assets/7cc6a55de5d1f9aeeaa656f076f624428557803d.png';
 
 export function Slide09TAuditoryDrill({ timerProps }: UFLISlideProps = {}) {
   return (

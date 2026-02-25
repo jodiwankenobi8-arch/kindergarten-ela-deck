@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import soundCardImg from 'figma:asset/dd0e9fb109116483b0dd22a0d5b546d4b5d25f54.png';
+import soundCardImg from '../../assets/dd0e9fb109116483b0dd22a0d5b546d4b5d25f54.png';
 
 export function Slide09AJSoundCard({ timerProps }: UFLISlideProps = {}) {
   return (

@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import ufliTitleImg from 'figma:asset/9a9e7e65002e7d9167d15d82f5555765c590d6c5.png';
+import ufliTitleImg from '../../assets/9a9e7e65002e7d9167d15d82f5555765c590d6c5.png';
 
 export function Slide07AUFLITitle({ timerProps }: UFLISlideProps = {}) {
   return (

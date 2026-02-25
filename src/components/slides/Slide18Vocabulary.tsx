@@ -1,5 +1,5 @@
 import { SlideLayout } from '../SlideLayout';
-import vocabularyImage from 'figma:asset/0f6f56e82aea4412e4fd66ad49d91c9be009de3e.png';
+import vocabularyImage from '../../assets/0f6f56e82aea4412e4fd66ad49d91c9be009de3e.png';
 
 export function Slide18Vocabulary() {
   return (

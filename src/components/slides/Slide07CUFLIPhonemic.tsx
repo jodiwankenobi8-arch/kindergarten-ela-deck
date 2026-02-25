@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import ufliPhonemicImg from 'figma:asset/ec58be06b2a7811f662914d27cfaa63f7e2a288f.png';
+import ufliPhonemicImg from '../../assets/ec58be06b2a7811f662914d27cfaa63f7e2a288f.png';
 
 export function Slide07CUFLIPhonemic({ timerProps }: UFLISlideProps = {}) {
   return (

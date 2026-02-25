@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import spellTogetherImg from 'figma:asset/26b7ad85b02e54a9dd513ef086045a52e31f002c.png';
+import spellTogetherImg from '../../assets/26b7ad85b02e54a9dd513ef086045a52e31f002c.png';
 
 export function Slide09AL3SpellTogether({ timerProps }: UFLISlideProps = {}) {
   return (

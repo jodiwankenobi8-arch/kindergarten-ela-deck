@@ -1,6 +1,6 @@
 import { SlideLayout } from '../SlideLayout';
-import entertainImage from 'figma:asset/7e4cea7dbf12c62700bce1b2137b5f36fbea5441.png';
-import informImage from 'figma:asset/0e8d3dbcb6812fc35e7168744b2f4650a5ddef84.png';
+import entertainImage from '../../assets/7e4cea7dbf12c62700bce1b2137b5f36fbea5441.png';
+import informImage from '../../assets/0e8d3dbcb6812fc35e7168744b2f4650a5ddef84.png';
 
 export function Slide18AAuthorsPurposeReview() {
   return (

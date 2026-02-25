@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import letterAAppleImg from 'figma:asset/05f46c0f2a2a28e80b238963992eb1a5433892e9.png';
+import letterAAppleImg from '../../assets/05f46c0f2a2a28e80b238963992eb1a5433892e9.png';
 
 export function Slide09ZLetterAApple({ timerProps }: UFLISlideProps = {}) {
   return (

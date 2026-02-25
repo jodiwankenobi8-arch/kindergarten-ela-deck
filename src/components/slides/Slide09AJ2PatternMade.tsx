@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import madeImg from 'figma:asset/b59d1ab2f5c2850b2b87b12a1f2639ca73b0a724.png';
+import madeImg from '../../assets/b59d1ab2f5c2850b2b87b12a1f2639ca73b0a724.png';
 
 export function Slide09AJ2PatternMade({ timerProps }: UFLISlideProps = {}) {
   return (

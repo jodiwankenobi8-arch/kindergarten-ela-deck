@@ -1,5 +1,5 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
-import storyPage157 from 'figma:asset/2bdc62296564795918ac604f9a6dcdc960104793.png';
+import storyPage157 from '../../assets/2bdc62296564795918ac604f9a6dcdc960104793.png';
 
 export function Slide12DStoryPage157() {
   return (

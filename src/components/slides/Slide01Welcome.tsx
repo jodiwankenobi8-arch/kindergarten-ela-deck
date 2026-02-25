@@ -1,6 +1,6 @@
 import { SlideLayout } from '../SlideLayout';
 import { Waves } from 'lucide-react';
-import birdImage from 'figma:asset/3c5f456ff361271f7d99297678004fcd37902fc2.png';
+import birdImage from '../../assets/3c5f456ff361271f7d99297678004fcd37902fc2.png';
 
 export function Slide01Welcome() {
   return (

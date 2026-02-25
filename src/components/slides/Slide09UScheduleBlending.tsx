@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import scheduleImg from 'figma:asset/86304c23da204e65ffbc87acd45bede7d61aa142.png';
+import scheduleImg from '../../assets/86304c23da204e65ffbc87acd45bede7d61aa142.png';
 
 export function Slide09UScheduleBlending({ timerProps }: UFLISlideProps = {}) {
   return (

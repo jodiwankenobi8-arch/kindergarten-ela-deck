@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import letterOImg from 'figma:asset/a11e52688bc34ec0f9277164cfcdbce149707c11.png';
+import letterOImg from '../../assets/a11e52688bc34ec0f9277164cfcdbce149707c11.png';
 
 export function Slide09FLetterO({ timerProps }: UFLISlideProps = {}) {
   return (

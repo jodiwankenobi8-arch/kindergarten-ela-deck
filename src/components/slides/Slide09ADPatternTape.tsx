@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import patternTapeImg from 'figma:asset/c4f381912aa51f7f5b772ffd8f9655ed6e5a3ec3.png';
+import patternTapeImg from '../../assets/c4f381912aa51f7f5b772ffd8f9655ed6e5a3ec3.png';
 
 export function Slide09ADPatternTape({ timerProps }: UFLISlideProps = {}) {
   return (

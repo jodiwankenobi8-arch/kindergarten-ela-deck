@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import blendingDrillImg from 'figma:asset/f8e0511fc9fbeeec073a5b860312e6c8a20b0335.png';
+import blendingDrillImg from '../../assets/f8e0511fc9fbeeec073a5b860312e6c8a20b0335.png';
 
 export function Slide09VBlendingDrillTitle({ timerProps }: UFLISlideProps = {}) {
   return (

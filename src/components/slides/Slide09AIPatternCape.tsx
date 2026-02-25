@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import capeImg from 'figma:asset/36e3b98ced6bd63ca764d55998ec024ceb3d8d11.png';
+import capeImg from '../../assets/36e3b98ced6bd63ca764d55998ec024ceb3d8d11.png';
 
 export function Slide09AIPatternCape({ timerProps }: UFLISlideProps = {}) {
   return (

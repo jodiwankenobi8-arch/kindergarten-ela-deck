@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import weDidItImg from 'figma:asset/3fdc4b4f5ede10bd831c6e11796285db9717fcf6.png';
+import weDidItImg from '../../assets/3fdc4b4f5ede10bd831c6e11796285db9717fcf6.png';
 
 export function Slide09AL5WeDidIt({ timerProps }: UFLISlideProps = {}) {
   return (

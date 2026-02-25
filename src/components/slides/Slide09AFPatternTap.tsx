@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import tapImg from 'figma:asset/2cf5c0ad3b46dddf791a5ee74193b93957aca66d.png';
+import tapImg from '../../assets/2cf5c0ad3b46dddf791a5ee74193b93957aca66d.png';
 
 export function Slide09AFPatternTap({ timerProps }: UFLISlideProps = {}) {
   return (

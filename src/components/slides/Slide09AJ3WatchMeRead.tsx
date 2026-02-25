@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import watchMeReadImg from 'figma:asset/bf7377207e747159e09a4c1e6f3ca25a4f47ca99.png';
+import watchMeReadImg from '../../assets/bf7377207e747159e09a4c1e6f3ca25a4f47ca99.png';
 
 export function Slide09AJ3WatchMeRead({ timerProps }: UFLISlideProps = {}) {
   return (

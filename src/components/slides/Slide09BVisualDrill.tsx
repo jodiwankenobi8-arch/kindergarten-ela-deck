@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import visualDrillImg from 'figma:asset/2f4f34c7a1fe08a3c2594134ca594a374691a7d4.png';
+import visualDrillImg from '../../assets/2f4f34c7a1fe08a3c2594134ca594a374691a7d4.png';
 
 export function Slide09BVisualDrill({ timerProps }: UFLISlideProps = {}) {
   return (

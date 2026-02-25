@@ -1,5 +1,5 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
-import bookCover from 'figma:asset/f7f02bb85adb231cf9b1bb7766f66d76bcc3ae48.png';
+import bookCover from '../../assets/f7f02bb85adb231cf9b1bb7766f66d76bcc3ae48.png';
 
 export function Slide12BookCover() {
   return (

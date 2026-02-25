@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import readTogetherImg from 'figma:asset/b0d223dadb632e63bb47a490f7b7cd6e1bd21c60.png';
+import readTogetherImg from '../../assets/b0d223dadb632e63bb47a490f7b7cd6e1bd21c60.png';
 
 export function Slide09AKReadTogether({ timerProps }: UFLISlideProps = {}) {
   return (

@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import letterXImg from 'figma:asset/abd3124f040c0af12c0ed248be8faf08b628ab03.png';
+import letterXImg from '../../assets/abd3124f040c0af12c0ed248be8faf08b628ab03.png';
 
 export function Slide09NLetterX({ timerProps }: UFLISlideProps = {}) {
   return (

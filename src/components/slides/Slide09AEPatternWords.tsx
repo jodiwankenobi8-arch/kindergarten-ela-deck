@@ -1,6 +1,6 @@
 import { UFLISlideLayout } from '../UFLISlideLayout';
 import { UFLISlideProps } from './UFLISlideProps';
-import patternWordsImg from 'figma:asset/d7582ca7be155b22977d308976fe464e8713399b.png';
+import patternWordsImg from '../../assets/d7582ca7be155b22977d308976fe464e8713399b.png';
 
 export function Slide09AEPatternWords({ timerProps }: UFLISlideProps = {}) {
   return (
