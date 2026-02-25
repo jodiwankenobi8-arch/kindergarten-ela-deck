@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
-import { Timer } from './Timer';
+import { PresentationStage } from "./PresentationStage";
+import { Timer } from "./Timer";
+import { ReactNode } from "react";
 
 interface SlideLayoutProps {
   type?: 'welcome' | 'instruction' | 'video' | 'interactive' | 'placeholder' | 'review';

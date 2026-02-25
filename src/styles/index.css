@@ -1,3 +1,73 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+/* === BIG READABLE DEFAULTS (text-only slides) === */
+/* If your slide wrapper uses a different class, we’ll adjust after. */
+
+.slide,
+[data-slide],
+.slide-root,
+.slide-content {
+  font-size: clamp(18px, 2.0vw, 34px);
+}
+
+.slide h1,
+[data-slide] h1,
+.slide-root h1,
+.slide-content h1 {
+  font-size: clamp(42px, 4.6vw, 84px);
+  line-height: 1.05;
+}
+
+.slide h2,
+[data-slide] h2,
+.slide-root h2,
+.slide-content h2 {
+  font-size: clamp(32px, 3.6vw, 64px);
+  line-height: 1.1;
+}
+
+.slide p,
+.slide li,
+[data-slide] p,
+[data-slide] li,
+.slide-root p,
+.slide-root li,
+.slide-content p,
+.slide-content li {
+  font-size: clamp(20px, 2.2vw, 40px);
+  line-height: 1.25;
+}
+
+.slide button,
+[data-slide] button,
+.slide-root button,
+.slide-content button {
+  font-size: clamp(18px, 2.0vw, 34px);
+  padding: clamp(10px, 1.2vw, 18px) clamp(14px, 1.6vw, 26px);
+}
+/* ===== FORCE FULL-SCREEN SLIDE LAYOUT ===== */
+
+#root,
+[data-slide-container="true"],
+.slide-stage,
+.slide-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.flex-1 > div {
+  max-width: 100% !important;
+}
+
+/* Prevent centered narrow layouts */
+[class*="max-w"] {
+  max-width: 100% !important;
+}
+
+/* Make slide content scale like real slides */
+.slide-content,
+.flex.flex-col.items-center {
+  width: 100%;
+  height: 100%;
+}
