@@ -1,6 +1,7 @@
-@import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+@import './fonts.css';
 /* === BIG READABLE DEFAULTS (text-only slides) === */
 /* If your slide wrapper uses a different class, we’ll adjust after. */
 

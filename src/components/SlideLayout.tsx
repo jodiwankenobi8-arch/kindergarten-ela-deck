@@ -1,37 +1,33 @@
 import React from "react";
 
-type SlideLayoutProps = {
+export type SlideLayoutProps = {
   children: React.ReactNode;
   background?: string;
+  className?: string;
+  style?: React.CSSProperties;
 };
 
-export default function SlideLayout({
+export function SlideLayout({
   children,
-  background = "#d9cfc2", // default slide background
+  background = "#d9cfc2",
+  className = "",
+  style,
 }: SlideLayoutProps) {
   return (
     <div
+      className={className}
       style={{
         width: "100%",
         height: "100%",
         position: "relative",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         overflow: "hidden",
         background,
+        ...style,
       }}
     >
-      {/* Slide Content Container */}
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "relative",
-        }}
-      >
-        {children}
-      </div>
+      {children}
     </div>
   );
 }
+
+export default SlideLayout;

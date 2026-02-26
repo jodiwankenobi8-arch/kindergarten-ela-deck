@@ -1,45 +1,54 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
-interface Props {
+type PresentationStageProps = {
   children: React.ReactNode;
-}
+};
 
-const SLIDE_WIDTH = 1920;
-const SLIDE_HEIGHT = 1080;
+const STAGE_W = 1920;
+const STAGE_H = 1080;
 
-export default function PresentationStage({ children }: Props) {
-  const [scale, setScale] = useState(1);
+export function PresentationStage({ children }: PresentationStageProps) {
+  const hostRef = useRef<HTMLDivElement | null>(null);
+  const [size, setSize] = useState<{ w: number; h: number }>({ w: 0, h: 0 });
 
   useEffect(() => {
-    const updateScale = () => {
-      const scaleX = window.innerWidth / SLIDE_WIDTH;
-      const scaleY = window.innerHeight / SLIDE_HEIGHT;
-      setScale(Math.min(scaleX, scaleY));
-    };
+    const el = hostRef.current;
+    if (!el) return;
 
-    updateScale();
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
+    const ro = new ResizeObserver(() => {
+      const r = el.getBoundingClientRect();
+      setSize({ w: r.width, h: r.height });
+    });
+
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
+
+  const scale = useMemo(() => {
+    if (!size.w || !size.h) return 1;
+    return Math.min(size.w / STAGE_W, size.h / STAGE_H);
+  }, [size.w, size.h]);
 
   return (
     <div
+      ref={hostRef}
       style={{
         width: "100vw",
         height: "100vh",
-        background: "#111",
+        overflow: "hidden",
+        background: "#0000", // transparent
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        overflow: "hidden",
       }}
     >
       <div
         style={{
-          width: SLIDE_WIDTH,
-          height: SLIDE_HEIGHT,
+          width: STAGE_W,
+          height: STAGE_H,
           transform: `scale(${scale})`,
           transformOrigin: "center center",
+          willChange: "transform",
           position: "relative",
         }}
       >
@@ -48,3 +57,5 @@ export default function PresentationStage({ children }: Props) {
     </div>
   );
 }
+
+export default PresentationStage;
